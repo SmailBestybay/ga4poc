@@ -7,13 +7,13 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
   module.exports = {
     title: "GlueOps GA4 POC",
     tagline: "Dinosaurs are cool",
-    url: "https://your-docusaurus-test-site.com",
+    url: "https://smailbestybay.github.io",
     baseUrl: "/",
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
     organizationName: "SmailBestybay", // Usually your GitHub org/user name.
-    projectName: "ga4poc", // Usually your repo name.
+    projectName: "smailbestybay.github.io", // Usually your repo name.
     deploymentBranch: "prod",
     trailingSlash: false,
 
