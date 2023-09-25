@@ -1,1 +1,0 @@
-gtag('set', {siteVersion: 1.0})
