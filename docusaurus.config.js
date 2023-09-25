@@ -14,7 +14,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
     favicon: "img/favicon.ico",
     organizationName: "SmailBestybay", // Usually your GitHub org/user name.
     projectName: "smailbestybay.github.io", // Usually your repo name.
-    deploymentBranch: "prod",
+    deploymentBranch: "gh-pages",
     trailingSlash: false,
 
     presets: [
