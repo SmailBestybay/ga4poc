@@ -15,6 +15,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
     organizationName: "SmailBestybay", // Usually your GitHub org/user name.
     projectName: "ga4poc", // Usually your repo name.
     deploymentBranch: "build",
+    trailingSlash: false,
 
     presets: [
       [
