@@ -15,7 +15,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
     organizationName: "SmailBestybay", // Usually your GitHub org/user name.
     projectName: "smailbestybay.github.io", // Usually your repo name.
     deploymentBranch: "gh-pages",
-    trailingSlash: false,
+    trailingSlash: true,
 
     presets: [
       [
