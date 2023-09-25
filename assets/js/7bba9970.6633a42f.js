@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkexamples_classic=self.webpackChunkexamples_classic||[]).push([[250],{6852:a=>{a.exports=JSON.parse('{"label":"hola","permalink":"/ga4poc/blog/tags/hola","allTagsPath":"/ga4poc/blog/tags","count":1}')}}]);
