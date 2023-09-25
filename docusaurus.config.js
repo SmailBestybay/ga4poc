@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
     title: "GlueOps GA4 POC",
     tagline: "Dinosaurs are cool",
     url: "https://smailbestybay.github.io",
-    baseUrl: "/",
+    baseUrl: "/ga4poc/",
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
