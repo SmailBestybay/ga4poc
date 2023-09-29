@@ -1,35 +1,16 @@
-import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
-import ReactGA from 'react-ga';
-
-if (ExecutionEnvironment.canUseDOM) {
-  console.log('canUseDOM');
-  // As soon as the site loads in the browser, register a global event listener
-  gtag("set", { site_version: "1.0" });
-}
-
-if (!globalThis.GA_INITIALIZED) {
-  globalThis.GA_INITIALIZED = false;
-  initGA();
-}
-
-export const initGA = () => {
-  ReactGA.initialize('G-YJV3SCVC5E');
-  globalThis.GA_INITIALIZED = true;
-};
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 export const logPageView = () => {
-  console.log('logPageView');
-  ReactGA.set({ page: window.location.pathname });
-  ReactGA.pageview(window.location.pathname);
+  if (ExecutionEnvironment.canUseDOM) {
+    // Docusaurus handles page views automatically with the Google Analytics plugin
+    console.log('logPageView');
+  }
 };
 
-export const logEvent = (category = '', action = '', label = '', value = '') => {
-  console.log('new event');
-  console.log(category, action, label, value);
-  ReactGA.event({
-    category,
-    action,
-    label,
-    value,
-  });
+export const logEvent = (eventName, eventProperties) => {
+  if (ExecutionEnvironment.canUseDOM) {
+    // Log a custom event
+    window.gtag('event', eventName, eventProperties);
+    console.log(`Event ${eventName} logged with properties:`, eventProperties);
+  }
 };

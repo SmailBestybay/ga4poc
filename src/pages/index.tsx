@@ -5,13 +5,32 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
-import { initGA, logEvent, logPageView } from '../../analytics'; // Import the necessary functions
+import { logEvent, logPageView } from '../../analytics'; // Import the necessary functions
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
+
+  useEffect(() => {
+    // Log page view when the component mounts
+    logPageView();
+
+    // Log a custom event
+    logEvent('custom_event', {
+      event_category: 'Custom Category',
+      event_label: 'Custom Label',
+    });
+  }, []);
+
   const handleButtonClick = () => {
     // Log custom event with versionId
-    logEvent('Button', 'Click', 'Custom Event', siteConfig.customFields.gluepOpsVersion as string);
+    
+
+    // Log a custom event
+    logEvent('Button', {
+      event_category: 'USER_INTERACTION',
+      event_label: siteConfig.customFields.gluepOpsVersion as string,
+    });
+    // logEvent('Button', 'Click', 'Custom Event', siteConfig.customFields.gluepOpsVersion as string);
   };
 
   return (
@@ -43,12 +62,6 @@ export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
 
   useEffect(() => {
-    // Ensure Google Analytics is initialized
-    if (!globalThis.GA_INITIALIZED) {
-      console.log('GA_INITIALIZED');
-      initGA();
-    }
-
     // Log initial page view
     logPageView();
   }, []);
