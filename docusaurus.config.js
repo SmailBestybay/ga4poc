@@ -16,7 +16,6 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
     projectName: "smailbestybay.github.io", // Usually your repo name.
     deploymentBranch: "gh-pages",
     trailingSlash: true,
-
     presets: [
       [
         "@docusaurus/preset-classic",
@@ -50,6 +49,9 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
     themeConfig:
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
+        customFields: {
+          gluepOpsVersion: 1.000,
+        },
         navbar: {
           title: "My Site",
           logo: {
