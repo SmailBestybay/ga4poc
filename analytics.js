@@ -3,6 +3,11 @@ import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 export const logPageView = () => {
   if (ExecutionEnvironment.canUseDOM) {
     // Docusaurus handles page views automatically with the Google Analytics plugin
+     // Log a custom event
+     logEvent('log_page_view_event', {
+      event_category: 'website loading',
+      event_label: 'event_label',
+    });
     console.log('logPageView');
   }
 };

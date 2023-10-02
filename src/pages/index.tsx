@@ -26,11 +26,10 @@ function HomepageHeader() {
     
 
     // Log a custom event
-    logEvent('Button', {
-      event_category: 'USER_INTERACTION',
+    logEvent('button_event', {
+      event_category: 'User click button',
       event_label: siteConfig.customFields.gluepOpsVersion as string,
     });
-    // logEvent('Button', 'Click', 'Custom Event', siteConfig.customFields.gluepOpsVersion as string);
   };
 
   return (
