@@ -45,13 +45,13 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
     ],
 
     clientModules: [require.resolve("./analytics.js")],
+    customFields: {
+      gluepOpsVersion: 1.000,
+    },
 
     themeConfig:
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
-        customFields: {
-          gluepOpsVersion: 1.000,
-        },
         navbar: {
           title: "My Site",
           logo: {
