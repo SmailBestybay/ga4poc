@@ -29,14 +29,15 @@ export const logEvent = (eventName, eventProperties) => {
     // Add glueOpsVersionId to the event properties
     const updatedEventProperties = {
       glueOpsVersionId: 99999999, // Replace with your dynamic value
+      ...eventProperties,
     };
 
-    // Set glueOpsVersionId using setGtag
-    setGtag(updatedEventProperties.glueOpsVersionId);
+    // // Set glueOpsVersionId using setGtag
+    // setGtag(updatedEventProperties.glueOpsVersionId);
 
     // Check if window.gtag is defined before triggering the event
     if (typeof window.gtag === 'function') {
-      window.gtag('event', eventName, eventProperties);
+      window.gtag('event', eventName, updatedEventProperties);
       console.log(`Event ${eventName} logged with properties:`, eventProperties);
     } else {
       console.warn(`window.gtag is not defined. Event ${eventName} was not logged.`);
