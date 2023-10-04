@@ -30,6 +30,8 @@ export const logEvent = (eventName, eventProperties) => {
     const updatedEventProperties = {
       glueOpsVersionId: 99999999, // Replace with your dynamic value
       ...eventProperties,
+      newPropTest:'newPropTest',
+      anotherNewPropTest: 'anotherNewPropTest'
     };
 
     // // Set glueOpsVersionId using setGtag
