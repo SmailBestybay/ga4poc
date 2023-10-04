@@ -28,7 +28,7 @@ export const logEvent = (eventName, eventProperties) => {
     // Log a custom event
     // Add glueOpsVersionId to the event properties
     const updatedEventProperties = {
-      glueOpsVersionId: 99999999, // Replace with your dynamic value
+      gluepOpsVersion: 8000, // Replace with your dynamic value
       ...eventProperties,
       newPropTest:'newPropTest',
       anotherNewPropTest: 'anotherNewPropTest'
