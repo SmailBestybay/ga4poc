@@ -1,4 +1,5 @@
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+import { setCookie, getClientId } from './trackUser';
 
 export const setGtag = (glueOpsVersionId) => {
   if (ExecutionEnvironment.canUseDOM) {
@@ -25,17 +26,19 @@ export const logPageView = () => {
 
 export const logEvent = (eventName, eventProperties) => {
   if (ExecutionEnvironment.canUseDOM) {
+    // Generate clientId
+    const clientId = getClientId();
+    setCookie('clientId', clientId, 365);
+
     // Log a custom event
     // Add glueOpsVersionId to the event properties
     const updatedEventProperties = {
       gluepOpsVersion: 8000, // Replace with your dynamic value
       ...eventProperties,
       newPropTest:'newPropTest',
-      anotherNewPropTest: 'anotherNewPropTest'
+      anotherNewPropTest: 'anotherNewPropTest',
+      cliendId: clientId
     };
-
-    // // Set glueOpsVersionId using setGtag
-    // setGtag(updatedEventProperties.glueOpsVersionId);
 
     // Check if window.gtag is defined before triggering the event
     if (typeof window.gtag === 'function') {
