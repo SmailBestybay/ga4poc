@@ -1,6 +1,6 @@
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import { setCookie, getClientId } from "./trackUser";
-import { customFields } from "./docusaurus.config";
+import pjson from "./package.json";
 
 export const setGtag = (glueOpsVersionId) => {
   if (ExecutionEnvironment.canUseDOM) {
@@ -35,9 +35,10 @@ export const logEvent = (eventName, eventProperties) => {
 
     // Log a custom event
     // Add glueOpsVersionId to the event properties
-    console.log(customFields.gluepOpsVersion)
+    console.log(pjson.version);
+    console.log(customFields.gluepOpsVersion);
     const updatedEventProperties = {
-      gluepOpsVersion: customFields.gluepOpsVersion, // Replace with your dynamic value
+      gluepOpsVersion: pjson.version, // Replace with your dynamic value
       ...eventProperties,
       newPropTest: "newPropTest",
       anotherNewPropTest: "anotherNewPropTest",

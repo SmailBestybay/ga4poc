@@ -49,9 +49,6 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
       require.resolve("./trackUser.js"),
       require.resolve("./analytics.js"),
     ],
-    customFields: {
-      gluepOpsVersion: 5000,
-    },
 
     themeConfig:
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
