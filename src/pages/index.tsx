@@ -5,14 +5,13 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
-import { logEvent, logPageView } from '../../analytics'; // Import the necessary functions
+import { logEvent } from '../../analytics'; // Import the necessary functions
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
 
   useEffect(() => {
     // Log page view when the component mounts
-    logPageView();
 
     // Log a custom event
     logEvent('custom_event', {
@@ -61,7 +60,6 @@ export default function Home(): JSX.Element {
 
   useEffect(() => {
     // Log initial page view
-    logPageView();
   }, []);
 
   return (
