@@ -17,13 +17,12 @@ const LogEventManager = (() => {
 
     if (ExecutionEnvironment.canUseDOM) {
       console.log("IN THE SETUP");
-      window.gtag("config", "G-YJV3SCVC5E", {
+      console.log(window.dataLayer);
+      window.dataLayer.push({
+        version: glueOpsVersion,
         user_id: clientId,
       });
-      const id = new Promise((resolve) => {
-        window.gtag("get", "G-YJV3SCVC5E", "user_id", resolve);
-      });
-      id.then((res) => console.log(res));
+      console.log(window.dataLayer);
     }
   };
 
@@ -56,8 +55,8 @@ export const logEvent = (eventName, eventProperties) => {
   if (ExecutionEnvironment.canUseDOM) {
     // Log a custom event
     const updatedEventProperties = {
-      glueOpsSiteVersion: LogEventManager.glueOpsVersion,
-      userID: LogEventManager.clientId,
+      // glueOpsSiteVersion: LogEventManager.glueOpsVersion,
+      // userID: LogEventManager.clientId,
       ...eventProperties,
     };
 
